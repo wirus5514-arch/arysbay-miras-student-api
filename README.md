@@ -70,5 +70,4 @@ Docker, GitHub and Jenkins.
 ## Deployment Status
 Status: Production Ready
 
-## Deployment Status
-Status: Production Ready
+
