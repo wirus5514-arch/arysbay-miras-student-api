@@ -1,0 +1,45 @@
+
+name: arysbay-miras-student-api
+
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: studentdb
+      POSTGRES_USER: studentuser
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - student_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studentuser -d studentdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    image: arysbay-miras-student-api:v1.0-37011
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/studentdb
+      DB_USERNAME: studentuser
+      DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - student_network
+
+volumes:
+  postgres_data:
+
+networks:
+  student_network:
+    driver: bridge
+
+
