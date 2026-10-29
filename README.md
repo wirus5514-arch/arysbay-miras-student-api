@@ -56,6 +56,6 @@ Docker, GitHub and Jenkins.
 
 
 ## Deployment Status
-Status: Development
+Status: Documentation Ready
 
 
