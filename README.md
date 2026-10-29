@@ -66,3 +66,9 @@ Course: DevOps
 Project: Spring Boot CRUD API with PostgreSQL,
 Docker, GitHub and Jenkins.
 
+
+## Deployment Status
+Status: Production Ready
+
+## Deployment Status
+Status: Production Ready
