@@ -1,15 +1,3 @@
-
-# Arysbay Miras Student API
-
-## Student Information
-
-- Name: Miras Arysbay
-- Group: IT2-2308
-- Student ID: 37011
-- Course: DevOps Midterm
-
-## Project Description
-
 Spring Boot REST API for managing student records.
 
 Technologies:
@@ -70,5 +58,4 @@ Docker, GitHub and Jenkins.
 ## Deployment Status
 Status: Development
 
-## Deployment Status
-Status: Development
+
